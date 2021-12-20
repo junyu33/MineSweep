@@ -1,0 +1,42 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+       {
+           "type": "shell",
+           "label": "g++.exe build active file",
+           //找到自己mingw安装目录下的bin文件夹，一共有俩bin文件夹，找有g++.exe的那个
+           "command": "C:\\mingw64\\bin\\g++.exe",
+           "args": [
+               "-static-libgcc",
+               "-g",
+               "${fileDirname}/main.cpp",
+               "${fileDirname}/MineSweep.cpp",
+               "${fileDirname}/MineSweep.h",
+               "-o",
+               //这里我多加了一个out目录用来存放输出的exe，工程目录下必须得有out目录，
+               //不然编译报错，不想用out文件夹可以在这里把out去掉
+               "${fileDirname}\\out\\${fileBasenameNoExtension}.exe",
+               //上面这些参数都是vscode官网能找到的，
+               //下面这些参数是要自己写的，至于怎么找到的看下面的图片及介绍
+               "-lgraphics64",    //32位的可能要把64去掉，具体自己尝试
+               "-luuid",
+               "-lmsimg32",
+               "-lgdi32",
+               "-limm32",
+               "-lole32",
+               "-loleaut32"
+           ],
+           "options": {
+               //同样是找到mingw安装目录下的bin文件夹
+               "cwd": "C:\\mingw64\\bin"
+           },
+           "problemMatcher": [
+               "$gcc"
+           ],
+           "group": {
+               "kind": "build",
+               "isDefault": true
+           }
+       }
+   ]
+}
