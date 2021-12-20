@@ -19,3 +19,7 @@
    开发环境：vscode mingw 8.1.0
 
    工具：ege20.08
+
+## 游戏截图
+
+[![TnFiAe.png](https://s4.ax1x.com/2021/12/20/TnFiAe.png)](https://imgtu.com/i/TnFiAe)
